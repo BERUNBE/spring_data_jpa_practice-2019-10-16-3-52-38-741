@@ -21,7 +21,7 @@ public class CriminalCase {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "element_id", referencedColumnName = "id")
-    private CriminalElements criminalElements;
+    private CriminalElement criminalElement;
 
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
@@ -52,12 +52,12 @@ public class CriminalCase {
         this.time = time;
     }
 
-    public CriminalElements getCriminalElements() {
-        return criminalElements;
+    public CriminalElement getCriminalElement() {
+        return criminalElement;
     }
 
-    public void setCriminalElements(CriminalElements criminalElements) {
-        this.criminalElements = criminalElements;
+    public void setCriminalElement(CriminalElement criminalElement) {
+        this.criminalElement = criminalElement;
     }
 
     public Procuratorate getProcuratorate() {

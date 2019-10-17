@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class CriminalElements {
+public class CriminalElement {
 
     @Id
     @GeneratedValue(generator = "uuid")

@@ -95,18 +95,18 @@ public class CriminalCaseRepoTest {
         CriminalCase criminalCase = new CriminalCase();
         criminalCase.setTime((long) 1);
         criminalCase.setName("name");
-        CriminalElements criminalElements = new CriminalElements();
-        criminalElements.setObjectiveElementDescription("objective");
-        criminalElements.setSubjectiveElementDescription("subjective");
-        criminalCase.setCriminalElements(criminalElements);
+        CriminalElement criminalElement = new CriminalElement();
+        criminalElement.setObjectiveElementDescription("objective");
+        criminalElement.setSubjectiveElementDescription("subjective");
+        criminalCase.setCriminalElement(criminalElement);
         criminalCase.setProcuratorate(procuratorate);
 
         criminalCaseRepo.saveAndFlush(criminalCase);
 
-        ArrayList<CriminalElements> criminalElementsList = new ArrayList<>(criminalElementRepo.findAll());
-        assertEquals(1, criminalElementsList.size());
+        ArrayList<CriminalElement> criminalElementList = new ArrayList<>(criminalElementRepo.findAll());
+        assertEquals(1, criminalElementList.size());
         assertSame(1, new ArrayList<>(criminalCaseRepo.findAll()).size());
-        assertEquals("objective", criminalElementsList.get(0).getObjectiveElementDescription());
+        assertEquals("objective", criminalElementList.get(0).getObjectiveElementDescription());
     }
 
     @Test
